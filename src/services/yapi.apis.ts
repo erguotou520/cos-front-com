@@ -45,29 +45,96 @@ export const apis: Apis = {
     p: ['bountyId'],
     d: 1
   },
-  'cores@disco-获取': {
-    u: '/cores/discos/{discoId}',
+  'cores@disco-startup-创建': {
+    u: '/cores/startups/{startupId}/disco',
+    m: 'POST',
+    p: ['startupId'],
+    d: 1
+  },
+  'cores@disco-startup-investor-列表': {
+    u: '/cores/startups/{startupId}/discos/investors',
     m: 'GET',
-    p: ['discoId'],
-    d: 0
+    p: ['startupId'],
+    q: ['limit', 'offset'],
+    d: 1
   },
   'cores@disco-列表': {
     u: '/cores/discos',
     m: 'GET',
     q: ['limit', 'offset', 'keyword', 'orderBy', 'isAsc'],
-    d: 0
+    d: 1
   },
   'cores@disco-startup-获取': {
     u: '/cores/startups/{startupId}/disco',
     m: 'GET',
     p: ['startupId'],
-    d: 0
+    d: 1
   },
-  'cores@disco-startup-创建': {
-    u: '/cores/startups/{startupId}/disco',
+  'cores@disco-startup-investor-创建': {
+    u: '/cores/startups/{startupId}/discos/investors',
     m: 'POST',
     p: ['startupId'],
+    d: 1
+  },
+  'cores@exchange-startup-创建': {
+    u: '/startups/{startupId}/exchange',
+    m: 'POST',
+    p: ['startupId'],
+    d: 1
+  },
+  'cores@exchange-获取': {
+    u: '/exchanges/{exchangeId}',
+    m: 'GET',
+    p: ['exchangeId'],
+    d: 1
+  },
+  'cores@exchange-startup-获取': {
+    u: '/startups/{startupId}/exchange',
+    m: 'GET',
+    p: ['startupId'],
+    d: 1
+  },
+  'cores@exchanges-列表': {
+    u: '/exchanges',
+    m: 'GET',
+    q: ['limit', 'offset'],
+    d: 1
+  },
+  'cores@exchange_transaction-创建': {
+    u: '/exchanges/{exchangeId}/transactions',
+    m: 'POST',
+    p: ['exchangeId'],
+    d: 1
+  },
+  'cores@exchange_transaction-获取': {
+    u: '/exchange/transactions/{transactionId}',
+    m: 'GET',
+    p: ['transactionId'],
+    d: 1
+  },
+  'cores@exchange_transaction-列表': {
+    u: '/exchanges/{exchangeId}/transactions',
+    m: 'GET',
+    p: ['exchangeId'],
+    q: ['type', 'limit', 'offset'],
     d: 0
+  },
+  'cores@exchanges-统计合计': {
+    u: '/exchanges:stats',
+    m: 'GET',
+    d: 1
+  },
+  'cores@exchange-汇总': {
+    u: '/exchanges/{exchangeId}/stats:total',
+    m: 'GET',
+    p: ['exchangeId'],
+    d: 1
+  },
+  'cores@exchange-价格变化': {
+    u: '/exchanges/{exchangeId}/stats:priceChange',
+    m: 'GET',
+    p: ['exchangeId'],
+    d: 1
   },
   'cores@startups-我的-follow列表': {
     u: '/cores/startups/me/followed',
@@ -180,7 +247,7 @@ export const apis: Apis = {
     q: ['source'],
     d: 1
   },
-  'cores@startup-获取prepare id': {
+  'cores@startup-获取prepareid': {
     u: '/cores/startups/prepareId',
     m: 'GET',
     d: 1
